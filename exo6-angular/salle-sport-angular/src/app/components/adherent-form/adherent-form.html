@@ -1,0 +1,71 @@
+<h2>
+  {{ modeModification ? 'Modifier un adhérent' : 'Ajouter un adhérent' }}
+</h2>
+
+<div *ngIf="loading">
+  Chargement de l'adhérent...
+</div>
+
+<div *ngIf="error">
+  {{ error }}
+</div>
+
+<form
+  *ngIf="!loading"
+  [formGroup]="adherentForm"
+  (ngSubmit)="enregistrer()">
+
+  <div>
+    <label>Nom :</label>
+    <input type="text" formControlName="nom">
+
+    <small
+      *ngIf="adherentForm.get('nom')?.touched &&
+             adherentForm.get('nom')?.invalid">
+
+      Le nom est obligatoire.
+
+    </small>
+  </div>
+
+  <div>
+    <label>Prénom :</label>
+    <input type="text" formControlName="prenom">
+
+    <small
+      *ngIf="adherentForm.get('prenom')?.touched &&
+             adherentForm.get('prenom')?.invalid">
+
+      Le prénom est obligatoire.
+
+    </small>
+  </div>
+
+  <div>
+    <label>Email :</label>
+    <input type="email" formControlName="email">
+
+    <small
+      *ngIf="adherentForm.get('email')?.touched &&
+             adherentForm.get('email')?.invalid">
+
+      Entrez une adresse email valide.
+
+    </small>
+  </div>
+
+  <div>
+    <label>Téléphone :</label>
+    <input type="text" formControlName="telephone">
+  </div>
+
+  <div>
+    <label>Date de naissance :</label>
+    <input type="date" formControlName="dateNaissance">
+  </div>
+
+  <button type="submit">
+    {{ modeModification ? 'Modifier' : 'Enregistrer' }}
+  </button>
+
+</form>
