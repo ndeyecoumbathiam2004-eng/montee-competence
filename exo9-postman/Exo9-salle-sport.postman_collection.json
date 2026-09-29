@@ -1,0 +1,432 @@
+{
+  "info": {
+    "_postman_id": "edccd1ed-0696-4e79-97a3-c2ce32952ddc",
+    "name": "Exo9-salle-sport",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57272099",
+    "_collection_link": "https://go.postman.co/collection/57272099-edccd1ed-0696-4e79-97a3-c2ce32952ddc?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Adherents",
+      "item": [
+        {
+          "name": "Liste les adhérents",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse contient content\", function () {\r\n    const jsonData = pm.response.json();\r\n    pm.expect(jsonData).to.have.property(\"content\");\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/adherents",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "adherents"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Détail d'un adhérent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse contient un id\", function () {\r\n    const jsonData = pm.response.json();\r\n    pm.expect(jsonData).to.have.property(\"id\");\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/adherents/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "adherents",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Créer un adhérent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 201\", function () {\r\n    pm.response.to.have.status(201);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/adherents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "adherents"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modifier un adhérent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nom\": \"Diop\",\r\n    \"prenom\": \"Awa\",\r\n    \"email\": \"awa.modifie@test.com\",\r\n    \"telephone\": \"771234567\",\r\n    \"dateNaissance\": \"2000-05-15\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/adherents/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "adherents",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Supprimer un adhérent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 204\", function () {\r\n    pm.response.to.have.status(204);\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/adherents/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "adherents",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tous les adherents",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/adherents",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "adherents"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Adhérent par ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/adherents/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "adherents",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Abonnements",
+      "item": [
+        {
+          "name": "Creer un abonnement",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 201 Created\", function () {\r\n    pm.response.to.have.status(201);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});\r\n\r\npm.test(\"La réponse contient un id\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"id\");\r\n});\r\n\r\npm.test(\"La réponse contient le type\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"type\");\r\n});\r\n\r\npm.test(\"La réponse contient adherentId\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"adherentId\");\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"type\": \"Mensuel\",\r\n  \"dateDebut\": \"2026-09-24\",\r\n  \"dateFin\": \"2026-10-24\",\r\n  \"adherentId\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/abonnements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "abonnements"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tester un abonnement",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 200 OK\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});\r\n\r\npm.test(\"La réponse contient un id\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"id\");\r\n});\r\n\r\npm.test(\"La réponse contient type\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"type\");\r\n});\r\n\r\npm.test(\"La réponse contient dateDebut\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"dateDebut\");\r\n});\r\n\r\npm.test(\"La réponse contient dateFin\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"dateFin\");\r\n});\r\n\r\npm.test(\"La réponse contient adherentId\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"adherentId\");\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/abonnements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "abonnements",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modifier un abonnement",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nom\": \"Diop\",\r\n  \"prenom\": \"Aminata\",\r\n  \"email\": \"aminata.diop@gmail.com\",\r\n  \"telephone\": \"771234567\",\r\n  \"dateNaissance\": \"2000-05-15\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/adherents/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "adherents",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Supptimer un abonnement",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/abonnements/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "abonnements",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Liste des abonnementd",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Le statut est 200 OK\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La réponse est en JSON\", function () {\r\n    pm.response.to.be.json;\r\n});\r\n\r\npm.test(\"La réponse contient content\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"content\");\r\n});\r\n\r\npm.test(\"content est un tableau\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json.content).to.be.an(\"array\");\r\n});\r\n\r\npm.test(\"La réponse contient totalElements\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"totalElements\");\r\n});\r\n\r\npm.test(\"La réponse contient totalPages\", function () {\r\n    const json = pm.response.json();\r\n    pm.expect(json).to.have.property(\"totalPages\");\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/abonnements",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "abonnements"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Liste des abonnements",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/abonnements",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "abonnements"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
