@@ -1,0 +1,227 @@
+
+.inscription-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 6%;
+  box-sizing: border-box;
+  background:
+    linear-gradient(
+      135deg,
+      #fff7ed 0%,
+      #ffffff 50%,
+      #f8fafc 100%
+    );
+}
+
+.inscription-card {
+  width: 100%;
+  max-width: 560px;
+  padding: 45px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.inscription-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 38px;
+  color: #111827;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.inscription-logo span {
+  font-size: 22px;
+}
+
+.inscription-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.inscription-label {
+  margin: 0 0 10px;
+  color: #f97316;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.inscription-header h1 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.inscription-header p:last-child {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1f2937;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  outline: none;
+  background: #f8fafc;
+  color: #111827;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.form-group input::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:hover {
+  border-color: #cbd5e1;
+}
+
+.form-group input:focus {
+  border-color: #f97316;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.inscription-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 16px 20px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+  background: #f97316;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  transition: 0.25s ease;
+}
+
+.inscription-button span:last-child {
+  font-size: 19px;
+  transition: 0.25s ease;
+}
+
+.inscription-button:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+}
+
+.inscription-button:hover span:last-child {
+  transform: translateX(5px);
+}
+
+.inscription-separator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0 20px;
+}
+
+.inscription-separator::before,
+.inscription-separator::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e5e7eb;
+}
+
+.inscription-separator span {
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.already-member {
+  margin: 0 0 18px;
+  color: #64748b;
+  text-align: center;
+  font-size: 12px;
+}
+
+.already-member a {
+  color: #f97316;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.already-member a:hover {
+  text-decoration: underline;
+}
+
+.back-home {
+  display: block;
+  color: #64748b;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.back-home:hover {
+  color: #f97316;
+}
+
+@media (max-width: 600px) {
+
+  .inscription-page {
+    padding: 40px 5%;
+  }
+
+  .inscription-card {
+    padding: 35px 25px;
+    border-radius: 14px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .inscription-header h1 {
+    font-size: 30px;
+  }
+
+}

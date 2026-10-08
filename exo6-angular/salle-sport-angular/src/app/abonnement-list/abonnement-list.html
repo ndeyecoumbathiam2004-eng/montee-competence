@@ -1,0 +1,184 @@
+<section class="abonnements-page">
+
+  <div class="abonnements-container">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <div>
+
+        <p class="page-label">
+          FITNESS · GESTION
+        </p>
+
+        <h1>
+          Vos abonnements.
+          <span>Simplement.</span>
+        </h1>
+
+        <p>
+          Consultez et gérez les abonnements de vos adhérents.
+        </p>
+
+      </div>
+
+
+      <a
+        routerLink="/abonnements/nouveau"
+        class="btn"
+      >
+        <span>+</span>
+        Nouvel abonnement
+      </a>
+
+    </div>
+
+
+    <!-- ERREUR -->
+
+    <p
+      *ngIf="error"
+      class="error"
+    >
+      <strong>!</strong>
+      {{ error }}
+    </p>
+
+
+    <!-- TABLEAU -->
+
+    <div
+      *ngIf="abonnements.length > 0"
+      class="table-card"
+    >
+
+      <div class="table-header">
+
+        <div>
+
+          <p class="table-label">
+            SUIVI DES ABONNEMENTS
+          </p>
+
+          <h2>
+            Abonnements
+          </h2>
+
+        </div>
+
+        <span class="count">
+          {{ abonnements.length }} abonnement(s)
+        </span>
+
+      </div>
+
+
+      <div class="table-scroll">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>ID</th>
+              <th>Type</th>
+              <th>Date début</th>
+              <th>Date fin</th>
+              <th>Adhérent</th>
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr
+              *ngFor="let abonnement of abonnements"
+            >
+
+              <td>
+
+                <span class="id-badge">
+                  #{{ abonnement.id }}
+                </span>
+
+              </td>
+
+
+              <td>
+
+                <span class="badge">
+                  {{ abonnement.type }}
+                </span>
+
+              </td>
+
+
+              <td>
+                {{ abonnement.dateDebut }}
+              </td>
+
+
+              <td>
+                {{ abonnement.dateFin }}
+              </td>
+
+
+              <td>
+
+                <span class="member-id">
+                  #{{ abonnement.adherentId }}
+                </span>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+
+    <!-- AUCUN ABONNEMENT -->
+
+    <div
+      *ngIf="abonnements.length === 0 && !error"
+      class="empty"
+    >
+
+      <div class="empty-icon">
+        💳
+      </div>
+
+      <p class="empty-label">
+        FITNESS · ABONNEMENTS
+      </p>
+
+      <h2>
+        Aucun abonnement
+      </h2>
+
+      <p>
+        Aucun abonnement n'a encore été créé.
+        Commencez par ajouter une formule pour un adhérent.
+      </p>
+
+      <a
+        routerLink="/abonnements/nouveau"
+        class="btn"
+      >
+        <span>+</span>
+        Créer un abonnement
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

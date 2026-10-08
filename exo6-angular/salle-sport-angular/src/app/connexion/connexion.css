@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+}
+
+.connexion-page {
+  min-height: calc(100vh - 78px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 20px;
+
+  background: #f6f6f6;
+}
+
+
+/* =========================
+   CARTE
+========================= */
+
+.connexion-card {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 50px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.connexion-header {
+  margin-bottom: 38px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 45px;
+
+  color: #111111;
+
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 22px;
+}
+
+.logo-text {
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.connexion-label {
+  margin: 0 0 12px;
+
+  color: #f97316;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.connexion-header h1 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: 42px;
+  line-height: 1;
+
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.connexion-description {
+  margin: 17px 0 0;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #222222;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #d8d8d8;
+
+  transition: border-color 0.25s ease;
+}
+
+.input-wrapper:focus-within {
+  border-bottom-color: #f97316;
+}
+
+.input-icon {
+  width: 35px;
+
+  color: #f97316;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.input-wrapper input {
+  width: 100%;
+
+  padding: 14px 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #111111;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.input-wrapper input::placeholder {
+  color: #aaaaaa;
+}
+
+
+/* =========================
+   ERREUR
+========================= */
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 13px 15px;
+
+  background: #fff1f1;
+
+  border-left: 3px solid #dc2626;
+
+  color: #dc2626;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   BOUTON
+========================= */
+
+.btn-connexion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 17px 20px;
+
+  border: none;
+
+  background: #f97316;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-connexion strong {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.btn-connexion:hover:not(:disabled) {
+  background: #111111;
+  transform: translateY(-2px);
+}
+
+.btn-connexion:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   INSCRIPTION
+========================= */
+
+.inscription-link {
+  margin-top: 30px;
+  padding-top: 25px;
+
+  border-top: 1px solid #eeeeee;
+
+  text-align: center;
+}
+
+.inscription-link p {
+  margin: 0 0 10px;
+
+  color: #888888;
+
+  font-size: 12px;
+}
+
+.inscription-link a {
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  transition: color 0.2s ease;
+}
+
+.inscription-link a:hover {
+  color: #f97316;
+}
+
+
+/* =========================
+   RETOUR
+========================= */
+
+.back-home {
+  display: block;
+
+  margin-top: 25px;
+
+  color: #999999;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.back-home:hover {
+  color: #f97316;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .connexion-page {
+    padding: 40px 18px;
+  }
+
+  .connexion-card {
+    padding: 35px 25px;
+  }
+
+  .logo {
+    margin-bottom: 35px;
+  }
+
+  .connexion-header h1 {
+    font-size: 36px;
+  }
+
+}

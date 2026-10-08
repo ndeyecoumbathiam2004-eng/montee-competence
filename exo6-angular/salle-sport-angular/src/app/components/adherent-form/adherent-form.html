@@ -1,0 +1,232 @@
+<section class="adherent-form-page">
+
+  <div class="form-container">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <p class="label">
+        FITNESS · GESTION DES MEMBRES
+      </p>
+
+      <h1>
+        {{ modeModification ? 'Modifier' : 'Ajouter' }}
+        <span>un adhérent.</span>
+      </h1>
+
+      <p>
+        {{ modeModification
+          ? 'Modifiez les informations de cet adhérent.'
+          : 'Ajoutez un nouveau membre à votre salle FITNESS.'
+        }}
+      </p>
+
+    </div>
+
+
+    <!-- CHARGEMENT -->
+
+    <div
+      class="loading"
+      *ngIf="loading"
+    >
+      <span>◌</span>
+      Chargement de l'adhérent...
+    </div>
+
+
+    <!-- ERREUR -->
+
+    <div
+      class="error"
+      *ngIf="error"
+    >
+      <strong>!</strong>
+      {{ error }}
+    </div>
+
+
+    <!-- FORMULAIRE -->
+
+    <form
+      *ngIf="!loading"
+      [formGroup]="adherentForm"
+      (ngSubmit)="enregistrer()"
+      class="adherent-form"
+    >
+
+
+      <!-- INFORMATIONS PERSONNELLES -->
+
+      <div class="form-section">
+
+        <div class="section-header">
+
+          <div>
+            <p class="section-label">
+              01 · IDENTITÉ
+            </p>
+
+            <h2>
+              Informations personnelles
+            </h2>
+          </div>
+
+          <span class="section-icon">
+            👤
+          </span>
+
+        </div>
+
+
+        <div class="form-grid">
+
+
+          <!-- NOM -->
+
+          <div class="form-group">
+
+            <label for="nom">
+              NOM
+            </label>
+
+            <input
+              id="nom"
+              type="text"
+              formControlName="nom"
+              placeholder="Ex : DIOP"
+            >
+
+            <small
+              *ngIf="
+                adherentForm.get('nom')?.touched &&
+                adherentForm.get('nom')?.invalid
+              "
+            >
+              Le nom est obligatoire.
+            </small>
+
+          </div>
+
+
+          <!-- PRÉNOM -->
+
+          <div class="form-group">
+
+            <label for="prenom">
+              PRÉNOM
+            </label>
+
+            <input
+              id="prenom"
+              type="text"
+              formControlName="prenom"
+              placeholder="Ex : Amadou"
+            >
+
+            <small
+              *ngIf="
+                adherentForm.get('prenom')?.touched &&
+                adherentForm.get('prenom')?.invalid
+              "
+            >
+              Le prénom est obligatoire.
+            </small>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="form-group full-width">
+
+            <label for="email">
+              EMAIL
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="exemple@email.com"
+            >
+
+            <small
+              *ngIf="
+                adherentForm.get('email')?.touched &&
+                adherentForm.get('email')?.invalid
+              "
+            >
+              Entrez une adresse email valide.
+            </small>
+
+          </div>
+
+
+          <!-- TÉLÉPHONE -->
+
+          <div class="form-group">
+
+            <label for="telephone">
+              TÉLÉPHONE
+            </label>
+
+            <input
+              id="telephone"
+              type="text"
+              formControlName="telephone"
+              placeholder="Ex : 77 123 45 67"
+            >
+
+          </div>
+
+
+          <!-- DATE DE NAISSANCE -->
+
+          <div class="form-group">
+
+            <label for="dateNaissance">
+              DATE DE NAISSANCE
+            </label>
+
+            <input
+              id="dateNaissance"
+              type="date"
+              formControlName="dateNaissance"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACTION -->
+
+      <div class="form-actions">
+
+        <button
+          type="submit"
+          class="submit-button"
+        >
+
+          <span>
+            {{ modeModification ? 'Modifier l’adhérent' : 'Enregistrer l’adhérent' }}
+          </span>
+
+          <strong>
+            →
+          </strong>
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>

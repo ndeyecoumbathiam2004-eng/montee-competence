@@ -1,0 +1,279 @@
+.planning-page {
+  min-height: calc(100vh - 78px);
+  padding: 80px 6%;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.planning-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 50px;
+}
+
+.label {
+  margin: 0 0 14px;
+  color: #f97316;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: .95;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.page-header h1 span {
+  display: block;
+  color: #f97316;
+}
+
+.description {
+  max-width: 600px;
+  margin-top: 22px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   HEADER PLANNING
+========================= */
+
+.planning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+  padding: 22px 25px;
+
+  background: #111827;
+  color: #ffffff;
+}
+
+.planning-header > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.planning-header span {
+  color: #f97316;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.planning-header strong {
+  font-size: 16px;
+}
+
+.week-navigation {
+  display: flex;
+  gap: 8px;
+}
+
+.week-navigation button {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #475569;
+
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: .25s ease;
+}
+
+.week-navigation button:hover {
+  background: #f97316;
+  border-color: #f97316;
+}
+
+
+/* =========================
+   GRILLE
+========================= */
+
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.day-card {
+  min-height: 260px;
+  padding: 22px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+
+  transition: .25s ease;
+}
+
+.day-card:hover {
+  border-color: #f97316;
+  transform: translateY(-3px);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.day-header span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.day-header strong {
+  color: #f97316;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+
+/* =========================
+   SÉANCES
+========================= */
+
+.session {
+  display: flex;
+  gap: 14px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.session-time {
+  min-width: 42px;
+
+  color: #f97316;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.session-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.session-content strong {
+  color: #111827;
+  font-size: 13px;
+}
+
+.session-content span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.empty-day {
+  padding-top: 30px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.planning-info {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  margin-top: 35px;
+  padding: 28px;
+
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+}
+
+.info-icon {
+  font-size: 35px;
+}
+
+.planning-info p {
+  margin: 0 0 7px;
+
+  color: #f97316;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.planning-info h3 {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.planning-info span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .planning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .planning-page {
+    padding: 60px 5%;
+  }
+
+  .planning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planning-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .planning-info {
+    align-items: flex-start;
+  }
+
+}

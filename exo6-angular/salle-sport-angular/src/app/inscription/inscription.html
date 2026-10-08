@@ -1,0 +1,145 @@
+<section class="inscription-page">
+
+  <div class="inscription-card">
+
+    <a routerLink="/" class="inscription-logo">
+      <span>🏋️</span>
+      FITNESS
+    </a>
+
+    <div class="inscription-header">
+
+      <p class="inscription-label">DEVENEZ MEMBRE</p>
+
+      <h1>Rejoignez FITNESS</h1>
+
+      <p>
+        Créez votre profil et commencez votre parcours sportif.
+      </p>
+
+    </div>
+
+    <form (ngSubmit)="sInscrire()">
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="prenom">Prénom</label>
+
+          <input
+            id="prenom"
+            name="prenom"
+            type="text"
+            [(ngModel)]="prenom"
+            placeholder="Votre prénom"
+            required
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="nom">Nom</label>
+
+          <input
+            id="nom"
+            name="nom"
+            type="text"
+            [(ngModel)]="nom"
+            placeholder="Votre nom"
+            required
+          >
+
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="email">Adresse email</label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          placeholder="exemple@email.com"
+          autocomplete="email"
+          required
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="telephone">Téléphone</label>
+
+        <input
+          id="telephone"
+          name="telephone"
+          type="tel"
+          [(ngModel)]="telephone"
+          placeholder="77 000 00 00"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="dateNaissance">Date de naissance</label>
+
+        <input
+          id="dateNaissance"
+          name="dateNaissance"
+          type="date"
+          [(ngModel)]="dateNaissance"
+          required
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="motDePasse">Mot de passe</label>
+
+        <input
+          id="motDePasse"
+          name="motDePasse"
+          type="password"
+          [(ngModel)]="motDePasse"
+          placeholder="Choisissez un mot de passe"
+          autocomplete="new-password"
+          required
+        >
+
+      </div>
+
+      <button
+        type="submit"
+        class="inscription-button"
+      >
+        <span>S'INSCRIRE</span>
+        <span>→</span>
+      </button>
+
+    </form>
+
+    <div class="inscription-separator">
+      <span>FITNESS</span>
+    </div>
+
+    <p class="already-member">
+      Vous avez déjà un compte ?
+      <a routerLink="/connexion">
+        SE CONNECTER →
+      </a>
+    </p>
+
+    <a routerLink="/" class="back-home">
+      ← Retour à l'accueil
+    </a>
+
+  </div>
+
+</section>

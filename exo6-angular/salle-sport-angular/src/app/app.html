@@ -1,0 +1,92 @@
+<header class="navbar">
+
+  <a routerLink="/" class="logo">
+    <span class="logo-icon">🏋️</span>
+    <span class="logo-text">FITNESS</span>
+  </a>
+
+  <nav class="nav-links">
+
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      ACCUEIL
+    </a>
+
+    <a
+      routerLink="/programme"
+      routerLinkActive="active"
+    >
+      PROGRAMME
+    </a>
+
+    <a
+      routerLink="/tarifs"
+      routerLinkActive="active"
+    >
+      TARIFS
+    </a>
+
+    <a
+      routerLink="/contact"
+      routerLinkActive="active"
+    >
+      CONTACT
+    </a>
+
+  </nav>
+
+  <div class="navbar-actions">
+
+    @if (!estConnecte) {
+
+      <a
+        routerLink="/connexion"
+        class="login-link"
+      >
+        SE CONNECTER
+      </a>
+
+      <a
+        routerLink="/inscription"
+        class="register-link"
+      >
+        S'INSCRIRE
+        <span>→</span>
+      </a>
+
+    } @else {
+
+      <span class="user-name">
+        {{ username }}
+      </span>
+
+      <button
+        type="button"
+        class="logout-button"
+        (click)="seDeconnecter()"
+      >
+        SE DÉCONNECTER
+      </button>
+
+    }
+
+  </div>
+
+</header>
+
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+<footer class="footer">
+
+  <p>
+    © 2026 Fitness — Gestion de salle de sport
+  </p>
+
+</footer>

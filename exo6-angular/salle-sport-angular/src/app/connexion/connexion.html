@@ -1,0 +1,144 @@
+<div class="connexion-page">
+
+  <div class="connexion-card">
+
+    <div class="connexion-header">
+
+      <a
+        routerLink="/"
+        class="logo"
+      >
+        <span class="logo-icon">🏋️</span>
+        <span class="logo-text">FITNESS</span>
+      </a>
+
+      <p class="connexion-label">
+        ESPACE MEMBRE
+      </p>
+
+      <h1>
+        Se connecter
+      </h1>
+
+      <p class="connexion-description">
+        Accédez à votre espace personnel FITNESS.
+      </p>
+
+    </div>
+
+
+    <form (ngSubmit)="seConnecter()">
+
+      <div class="form-group">
+
+        <label for="username">
+          NOM D'UTILISATEUR
+        </label>
+
+        <div class="input-wrapper">
+
+          <span class="input-icon">
+            @
+          </span>
+
+          <input
+            id="username"
+            type="text"
+            name="username"
+            [(ngModel)]="username"
+            placeholder="Votre nom d'utilisateur"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="password">
+          MOT DE PASSE
+        </label>
+
+        <div class="input-wrapper">
+
+          <span class="input-icon">
+            •
+          </span>
+
+          <input
+            id="password"
+            type="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="Votre mot de passe"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      @if (erreur) {
+
+        <div class="error-message">
+          {{ erreur }}
+        </div>
+
+      }
+
+
+      <button
+        type="submit"
+        class="btn-connexion"
+        [disabled]="chargement"
+      >
+
+        @if (chargement) {
+
+          <span>
+            CONNEXION...
+          </span>
+
+        } @else {
+
+          <span>
+            SE CONNECTER
+          </span>
+
+          <strong>
+            →
+          </strong>
+
+        }
+
+      </button>
+
+    </form>
+
+
+    <div class="inscription-link">
+
+      <p>
+        Vous n'avez pas encore de compte ?
+      </p>
+
+      <a routerLink="/inscription">
+        CRÉER MON COMPTE →
+      </a>
+
+    </div>
+
+
+    <a
+      routerLink="/"
+      class="back-home"
+    >
+      ← Retour à l'accueil
+    </a>
+
+  </div>
+
+</div>

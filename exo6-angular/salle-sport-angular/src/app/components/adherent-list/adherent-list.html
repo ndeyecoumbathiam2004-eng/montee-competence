@@ -1,0 +1,290 @@
+<section class="adherent-page">
+
+  <div class="adherent-container">
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <div>
+
+        <p class="label">
+          FITNESS · GESTION DES MEMBRES
+        </p>
+
+        <h1>
+          Vos adhérents.
+          <span>En un seul endroit.</span>
+        </h1>
+
+        <p class="header-description">
+          Consultez, ajoutez et modifiez facilement les informations
+          des adhérents de votre salle.
+        </p>
+
+      </div>
+
+      <a
+        routerLink="/adherents/nouveau"
+        class="add-button"
+      >
+        <span>+</span>
+        Ajouter un adhérent
+      </a>
+
+    </div>
+
+
+    <!-- CHARGEMENT -->
+
+    <div
+      class="loading"
+      *ngIf="loading"
+    >
+      <span class="loading-icon">◌</span>
+      Chargement des adhérents...
+    </div>
+
+
+    <!-- ERREUR -->
+
+    <div
+      class="error"
+      *ngIf="error"
+    >
+      <span>!</span>
+      {{ error }}
+    </div>
+
+
+    <!-- CONTENU -->
+
+    <div
+      class="content-card"
+      *ngIf="!loading && !error"
+    >
+
+
+      <!-- AUCUN ADHÉRENT -->
+
+      <div
+        class="empty"
+        *ngIf="adherents.length === 0"
+      >
+
+        <div class="empty-icon">
+          👥
+        </div>
+
+        <p class="empty-label">
+          FITNESS · ADHÉRENTS
+        </p>
+
+        <h2>
+          Aucun adhérent trouvé
+        </h2>
+
+        <p>
+          Commencez par ajouter un nouvel adhérent
+          à votre salle.
+        </p>
+
+        <a
+          routerLink="/adherents/nouveau"
+          class="add-button"
+        >
+          <span>+</span>
+          Ajouter un adhérent
+        </a>
+
+      </div>
+
+
+      <!-- TABLEAU -->
+
+      <div
+        class="table-container"
+        *ngIf="adherents.length > 0"
+      >
+
+        <div class="table-header">
+
+          <div>
+
+            <p class="table-label">
+              LISTE DES MEMBRES
+            </p>
+
+            <h2>
+              Adhérents
+            </h2>
+
+          </div>
+
+          <span class="member-count">
+            {{ adherents.length }} membre(s)
+          </span>
+
+        </div>
+
+
+        <div class="table-scroll">
+
+          <table>
+
+            <thead>
+
+              <tr>
+
+                <th>ID</th>
+
+                <th>
+                  Nom
+                </th>
+
+                <th>
+                  Prénom
+                </th>
+
+                <th>
+                  Email
+                </th>
+
+                <th>
+                  Téléphone
+                </th>
+
+                <th>
+                  Date de naissance
+                </th>
+
+                <th>
+                  Actions
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+              <tr
+                *ngFor="let adherent of adherents"
+              >
+
+                <td>
+
+                  <span class="id-badge">
+                    #{{ adherent.id }}
+                  </span>
+
+                </td>
+
+
+                <td class="name">
+
+                  {{ adherent.nom }}
+
+                </td>
+
+
+                <td>
+
+                  {{ adherent.prenom }}
+
+                </td>
+
+
+                <td class="email">
+
+                  {{ adherent.email }}
+
+                </td>
+
+
+                <td>
+
+                  {{ adherent.telephone || '—' }}
+
+                </td>
+
+
+                <td>
+
+                  {{ adherent.dateNaissance }}
+
+                </td>
+
+
+                <td class="actions">
+
+                  <a
+                    [routerLink]="['/adherents', adherent.id]"
+                    class="action-button detail"
+                  >
+                    Détail
+                  </a>
+
+                  <a
+                    [routerLink]="[
+                      '/adherents',
+                      adherent.id,
+                      'modifier'
+                    ]"
+                    class="action-button edit"
+                  >
+                    Modifier
+                  </a>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+
+      <!-- PAGINATION -->
+
+      <div
+        class="pagination"
+        *ngIf="adherents.length > 0 && totalPages > 0"
+      >
+
+        <button
+          (click)="pagePrecedente()"
+          [disabled]="page === 0"
+        >
+          ← Précédent
+        </button>
+
+
+        <span>
+          Page
+          <strong>{{ page + 1 }}</strong>
+          /
+          {{ totalPages }}
+        </span>
+
+
+        <button
+          (click)="pageSuivante()"
+          [disabled]="page >= totalPages - 1"
+        >
+          Suivant →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

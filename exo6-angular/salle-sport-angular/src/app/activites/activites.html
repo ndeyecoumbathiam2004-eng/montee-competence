@@ -1,0 +1,268 @@
+<section class="activites-page">
+
+  <div class="activites-container">
+
+    <div class="page-header">
+      <div>
+        <p class="label">FITNESS · ACTIVITÉS</p>
+
+        <h1>
+          Bougez.
+          <span>Progressez.</span>
+        </h1>
+
+        <p class="header-description">
+          Gérez les activités proposées aux adhérents de la salle.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- AJOUTER UNE ACTIVITÉ -->
+
+    <div class="form-card">
+
+      <div class="form-header">
+        <div>
+          <p class="form-label">NOUVELLE ACTIVITÉ</p>
+          <h2>Ajouter une activité</h2>
+        </div>
+
+        <div class="form-icon">＋</div>
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Nom de l'activité</label>
+
+          <input
+            type="text"
+            [(ngModel)]="nouvelleActivite.nom"
+            placeholder="Ex : Musculation"
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label>Durée (minutes)</label>
+
+          <input
+            type="number"
+            [(ngModel)]="nouvelleActivite.duree"
+            min="1"
+            placeholder="60"
+          >
+        </div>
+
+
+        <div class="form-group full">
+          <label>Description</label>
+
+          <textarea
+            [(ngModel)]="nouvelleActivite.description"
+            rows="3"
+            placeholder="Décrivez l'activité..."
+          ></textarea>
+        </div>
+
+      </div>
+
+
+      <button
+        class="btn-primary"
+        type="button"
+        (click)="ajouterActivite()"
+      >
+        Ajouter l'activité
+        <span>→</span>
+      </button>
+
+    </div>
+
+
+    <!-- LISTE DES ACTIVITÉS -->
+
+    <div class="section-title">
+
+      <div>
+        <p class="label">ACTIVITÉS DISPONIBLES</p>
+        <h2>Nos activités</h2>
+      </div>
+
+      <button
+        class="btn-refresh"
+        type="button"
+        (click)="chargerActivites()"
+      >
+        ↻ Actualiser
+      </button>
+
+    </div>
+
+
+    <div
+      class="empty-state"
+      *ngIf="activites.length === 0"
+    >
+      <div class="empty-icon">🏋️</div>
+
+      <h3>Aucune activité</h3>
+
+      <p>
+        Ajoutez votre première activité pour commencer.
+      </p>
+    </div>
+
+
+    <div
+      class="activites-grid"
+      *ngIf="activites.length > 0"
+    >
+
+      <div
+        class="activite-card"
+        *ngFor="let activite of activites"
+      >
+
+        <div class="card-top">
+
+          <div class="activity-icon">
+            🏋️
+          </div>
+
+          <span class="duration">
+            {{ activite.duree }} min
+          </span>
+
+        </div>
+
+
+        <div class="card-content">
+
+          <p class="card-number">
+            ACTIVITÉ #{{ activite.id }}
+          </p>
+
+          <h3>
+            {{ activite.nom }}
+          </h3>
+
+          <p>
+            {{ activite.description }}
+          </p>
+
+        </div>
+
+
+        <div class="card-actions">
+
+          <button
+            type="button"
+            class="btn-edit"
+            (click)="modifierActivite(activite)"
+          >
+            Modifier
+          </button>
+
+          <button
+            type="button"
+            class="btn-delete"
+            (click)="supprimerActivite(activite.id!)"
+          >
+            Supprimer
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- MODIFICATION -->
+
+    <div
+      class="edit-card"
+      *ngIf="activiteEnModification"
+    >
+
+      <div class="form-header">
+
+        <div>
+          <p class="form-label">MODIFICATION</p>
+          <h2>Modifier l'activité</h2>
+        </div>
+
+        <div class="form-icon">✎</div>
+
+      </div>
+
+
+      <div class="form-grid">
+
+        <div class="form-group">
+
+          <label>Nom</label>
+
+          <input
+            type="text"
+            [(ngModel)]="activiteEnModification.nom"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Durée (minutes)</label>
+
+          <input
+            type="number"
+            [(ngModel)]="activiteEnModification.duree"
+            min="1"
+          >
+
+        </div>
+
+
+        <div class="form-group full">
+
+          <label>Description</label>
+
+          <textarea
+            [(ngModel)]="activiteEnModification.description"
+            rows="3"
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <div class="edit-actions">
+
+        <button
+          type="button"
+          class="btn-secondary"
+          (click)="annulerModification()"
+        >
+          Annuler
+        </button>
+
+        <button
+          type="button"
+          class="btn-primary"
+          (click)="enregistrerModification()"
+        >
+          Enregistrer les modifications
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

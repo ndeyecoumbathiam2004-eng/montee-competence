@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+}
+
+.member-page {
+  min-height: calc(100vh - 78px);
+  padding: 80px 7% 60px;
+  background: #f6f6f6;
+  color: #111111;
+}
+
+.member-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding-bottom: 45px;
+  margin-bottom: 40px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.label {
+  margin: 0 0 15px;
+
+  color: #f97316;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 0.95;
+
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.page-header h1 span {
+  display: block;
+  color: #f97316;
+}
+
+.header-description {
+  max-width: 600px;
+
+  margin: 25px 0 0;
+
+  color: #777777;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.header-number {
+  color: #dddddd;
+
+  font-size: 90px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+
+/* =========================
+   CARTES
+========================= */
+
+.member-cards {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.member-card {
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #f97316;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   CARTE PREMIUM
+========================= */
+
+.member-card.featured {
+  border-top: 4px solid #f97316;
+}
+
+
+/* =========================
+   HAUT CARTE
+========================= */
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 45px;
+}
+
+.card-number {
+  color: #f97316;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  background: #fff1e8;
+
+  font-size: 22px;
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h2 {
+  margin: 0 0 13px;
+
+  color: #111111;
+
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.card-content p {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   LIEN
+========================= */
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 30px;
+  padding-top: 18px;
+
+  border-top: 1px solid #eeeeee;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  transition: color 0.2s ease;
+}
+
+a.card-link:hover {
+  color: #f97316;
+}
+
+.card-link strong {
+  color: #f97316;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+/* =========================
+   BLOC INFO
+========================= */
+
+.member-info {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 25px;
+  padding: 30px 35px;
+
+  background: #111111;
+
+  color: #ffffff;
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 55px;
+  height: 55px;
+
+  background: #f97316;
+
+  font-size: 23px;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-label {
+  margin: 0 0 8px;
+
+  color: #f97316;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.info-content h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.info-content h3 span {
+  color: #f97316;
+}
+
+.info-content > p:last-child {
+  margin: 8px 0 0;
+
+  color: #999999;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.info-arrow {
+  color: #f97316;
+
+  font-size: 28px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .member-page {
+    padding: 60px 5%;
+  }
+
+  .member-cards {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .page-header {
+    display: block;
+  }
+
+  .header-number {
+    display: none;
+  }
+
+  .page-header h1 {
+    font-size: 45px;
+  }
+
+  .member-card {
+    min-height: 280px;
+    padding: 25px;
+  }
+
+  .member-info {
+    align-items: flex-start;
+
+    padding: 25px;
+
+    gap: 15px;
+  }
+
+  .info-content h3 {
+    font-size: 17px;
+  }
+
+  .info-arrow {
+    display: none;
+  }
+
+}

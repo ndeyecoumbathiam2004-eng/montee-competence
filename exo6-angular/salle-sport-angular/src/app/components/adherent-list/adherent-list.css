@@ -1,0 +1,655 @@
+* {
+  box-sizing: border-box;
+}
+
+.adherent-page {
+  min-height: calc(100vh - 78px);
+
+  padding: 70px 5% 60px;
+
+  background: #f6f6f6;
+
+  color: #111111;
+}
+
+.adherent-container {
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding-bottom: 40px;
+
+  margin-bottom: 35px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.label {
+  margin: 0 0 14px;
+
+  color: #f97316;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: clamp(40px, 5vw, 65px);
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+.page-header h1 span {
+  display: block;
+
+  color: #f97316;
+}
+
+.header-description {
+  max-width: 620px;
+
+  margin: 22px 0 0;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   BOUTON AJOUT
+========================= */
+
+.add-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  padding: 16px 20px;
+
+  background: #f97316;
+
+  color: #ffffff;
+
+  border: none;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.add-button span {
+  font-size: 19px;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.add-button:hover {
+  background: #111111;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 180px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  color: #777777;
+
+  font-size: 13px;
+}
+
+.loading-icon {
+  color: #f97316;
+
+  font-size: 25px;
+
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================
+   ERREUR
+========================= */
+
+.error {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 18px 20px;
+
+  background: #fff1f1;
+
+  border-left: 4px solid #dc2626;
+
+  color: #dc2626;
+
+  font-size: 13px;
+}
+
+.error span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 24px;
+
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  font-weight: 900;
+}
+
+
+/* =========================
+   CARTE PRINCIPALE
+========================= */
+
+.content-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   TABLEAU
+========================= */
+
+.table-container {
+  width: 100%;
+}
+
+.table-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 30px 30px 25px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.table-label {
+  margin: 0 0 7px;
+
+  color: #f97316;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.table-header h2 {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: 25px;
+
+  font-weight: 900;
+}
+
+.member-count {
+  padding: 9px 13px;
+
+  background: #fff1e8;
+
+  color: #f97316;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   SCROLL TABLEAU
+========================= */
+
+.table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+  width: 100%;
+
+  min-width: 1000px;
+
+  border-collapse: collapse;
+}
+
+thead {
+  background: #fafafa;
+}
+
+th {
+  padding: 16px 18px;
+
+  color: #777777;
+
+  border-bottom: 1px solid #eeeeee;
+
+  text-align: left;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+td {
+  padding: 18px;
+
+  color: #555555;
+
+  border-bottom: 1px solid #eeeeee;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #fffaf6;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================
+   NOM
+========================= */
+
+td.name {
+  color: #111111;
+
+  font-weight: 900;
+}
+
+td.email {
+  color: #777777;
+}
+
+
+/* =========================
+   ID
+========================= */
+
+.id-badge {
+  display: inline-block;
+
+  padding: 6px 9px;
+
+  background: #f3f3f3;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.action-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 8px 11px;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+
+  transition: all 0.2s ease;
+}
+
+.action-button.detail {
+  background: #f3f3f3;
+
+  color: #111111;
+}
+
+.action-button.detail:hover {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+.action-button.edit {
+  background: #fff1e8;
+
+  color: #f97316;
+}
+
+.action-button.edit:hover {
+  background: #f97316;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 20px 30px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.pagination button {
+  padding: 11px 15px;
+
+  border: 1px solid #dddddd;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #111111;
+
+  color: #ffffff;
+
+  border-color: #111111;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: #888888;
+
+  font-size: 11px;
+}
+
+.pagination strong {
+  color: #111111;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 420px;
+
+  padding: 50px;
+
+  text-align: center;
+}
+
+.empty-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 75px;
+
+  height: 75px;
+
+  margin-bottom: 20px;
+
+  background: #fff1e8;
+
+  font-size: 30px;
+}
+
+.empty-label {
+  margin: 0 0 10px;
+
+  color: #f97316;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.empty h2 {
+  margin: 0 0 10px;
+
+  color: #111111;
+
+  font-size: 25px;
+
+  font-weight: 900;
+}
+
+.empty p:not(.empty-label) {
+  margin: 0 0 25px;
+
+  color: #888888;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 900px) {
+
+  .adherent-page {
+    padding: 60px 5% 50px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .adherent-page {
+    padding: 45px 18px;
+  }
+
+  .page-header h1 {
+    font-size: 42px;
+  }
+
+  .header-description {
+    font-size: 13px;
+  }
+
+  .table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 25px 20px;
+  }
+
+  .pagination {
+    padding: 18px 20px;
+  }
+
+  .pagination span {
+    font-size: 10px;
+  }
+
+  .pagination button {
+    padding: 9px 10px;
+  }
+
+}

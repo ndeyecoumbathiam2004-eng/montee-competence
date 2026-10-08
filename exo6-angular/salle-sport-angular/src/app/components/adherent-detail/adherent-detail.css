@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+}
+
+.adherent-detail-page {
+  min-height: calc(100vh - 78px);
+
+  padding: 70px 5% 70px;
+
+  background: #f6f6f6;
+
+  color: #111111;
+}
+
+.detail-container {
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  padding-bottom: 35px;
+
+  margin-bottom: 35px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.label {
+  margin: 0 0 14px;
+
+  color: #f97316;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2.5px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 6vw, 65px);
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+.page-header h1 span {
+  display: block;
+
+  color: #f97316;
+}
+
+.page-header > p:last-child {
+  margin: 22px 0 0;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 180px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  color: #777777;
+
+  font-size: 13px;
+}
+
+.loading span {
+  color: #f97316;
+
+  font-size: 25px;
+
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================
+   ERREUR
+========================= */
+
+.error {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 17px 20px;
+
+  background: #fff1f1;
+
+  border-left: 4px solid #dc2626;
+
+  color: #dc2626;
+
+  font-size: 13px;
+}
+
+.error strong {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 24px;
+
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: #dc2626;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   PROFIL
+========================= */
+
+.profile-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e5e5;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   PROFIL HEADER
+========================= */
+
+.profile-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 35px;
+
+  background: #111111;
+
+  color: #ffffff;
+}
+
+.profile-avatar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 75px;
+
+  height: 75px;
+
+  background: #f97316;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.profile-label {
+  margin: 0 0 8px;
+
+  color: #f97316;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.profile-header h2 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+
+  font-weight: 900;
+}
+
+.profile-id {
+  color: #999999;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   INFORMATIONS
+========================= */
+
+.information-section {
+  padding: 35px;
+}
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: #f97316;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.section-heading span {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 45px;
+
+  height: 45px;
+
+  background: #fff1e8;
+
+  font-size: 20px;
+}
+
+
+/* =========================
+   GRILLE INFORMATIONS
+========================= */
+
+.information-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  border-top: 1px solid #eeeeee;
+
+  border-left: 1px solid #eeeeee;
+}
+
+.information-item {
+  min-height: 105px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 20px;
+
+  border-right: 1px solid #eeeeee;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.information-label {
+  color: #999999;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.information-item strong {
+  color: #111111;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  word-break: break-word;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.profile-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  padding: 20px 35px;
+
+  background: #fafafa;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.edit-button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 15px 20px;
+
+  background: #f97316;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.edit-button strong {
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+.edit-button:hover {
+  background: #111111;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .adherent-detail-page {
+    padding: 45px 18px;
+  }
+
+  .page-header h1 {
+    font-size: 43px;
+  }
+
+  .profile-header {
+    align-items: flex-start;
+
+    padding: 25px;
+
+    gap: 18px;
+  }
+
+  .profile-avatar {
+    width: 60px;
+
+    height: 60px;
+
+    font-size: 19px;
+  }
+
+  .profile-header h2 {
+    font-size: 21px;
+  }
+
+  .information-section {
+    padding: 25px 20px;
+  }
+
+  .information-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-footer {
+    padding: 20px;
+  }
+
+  .edit-button {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,231 @@
+<section class="adherent-detail-page">
+
+  <div class="detail-container">
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <div>
+
+        <p class="label">
+          FITNESS · PROFIL ADHÉRENT
+        </p>
+
+        <h1>
+          Fiche
+          <span>adhérent.</span>
+        </h1>
+
+        <p>
+          Retrouvez ici les informations personnelles de cet adhérent.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- CHARGEMENT -->
+
+    <div
+      class="loading"
+      *ngIf="loading"
+    >
+
+      <span>◌</span>
+
+      Chargement...
+
+    </div>
+
+
+    <!-- ERREUR -->
+
+    <div
+      class="error"
+      *ngIf="error"
+    >
+
+      <strong>!</strong>
+
+      {{ error }}
+
+    </div>
+
+
+    <!-- PROFIL -->
+
+    <div
+      class="profile-card"
+      *ngIf="!loading && !error && adherent"
+    >
+
+      <!-- PROFIL HEADER -->
+
+      <div class="profile-header">
+
+        <div class="profile-avatar">
+          {{ adherent.prenom?.charAt(0) }}{{ adherent.nom?.charAt(0) }}
+        </div>
+
+        <div>
+
+          <p class="profile-label">
+            MEMBRE FITNESS
+          </p>
+
+          <h2>
+            {{ adherent.prenom }} {{ adherent.nom }}
+          </h2>
+
+          <span class="profile-id">
+            Membre #{{ adherent.id }}
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- INFORMATIONS -->
+
+      <div class="information-section">
+
+        <div class="section-heading">
+
+          <p>
+            INFORMATIONS PERSONNELLES
+          </p>
+
+          <span>
+            👤
+          </span>
+
+        </div>
+
+
+        <div class="information-grid">
+
+          <!-- ID -->
+
+          <div class="information-item">
+
+            <span class="information-label">
+              ID ADHÉRENT
+            </span>
+
+            <strong>
+              #{{ adherent.id }}
+            </strong>
+
+          </div>
+
+
+          <!-- NOM -->
+
+          <div class="information-item">
+
+            <span class="information-label">
+              NOM
+            </span>
+
+            <strong>
+              {{ adherent.nom }}
+            </strong>
+
+          </div>
+
+
+          <!-- PRÉNOM -->
+
+          <div class="information-item">
+
+            <span class="information-label">
+              PRÉNOM
+            </span>
+
+            <strong>
+              {{ adherent.prenom }}
+            </strong>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="information-item">
+
+            <span class="information-label">
+              EMAIL
+            </span>
+
+            <strong>
+              {{ adherent.email }}
+            </strong>
+
+          </div>
+
+
+          <!-- TÉLÉPHONE -->
+
+          <div class="information-item">
+
+            <span class="information-label">
+              TÉLÉPHONE
+            </span>
+
+            <strong>
+              {{ adherent.telephone || '—' }}
+            </strong>
+
+          </div>
+
+
+          <!-- DATE DE NAISSANCE -->
+
+          <div class="information-item">
+
+            <span class="information-label">
+              DATE DE NAISSANCE
+            </span>
+
+            <strong>
+              {{ adherent.dateNaissance }}
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACTION -->
+
+      <div class="profile-footer">
+
+        <a
+          [routerLink]="[
+            '/adherents',
+            adherent.id,
+            'modifier'
+          ]"
+          class="edit-button"
+        >
+
+          Modifier le profil
+
+          <strong>
+            →
+          </strong>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
